@@ -1,3 +1,4 @@
+import streamlit as st
 import yfinance as yf
 import pandas as pd
 from datetime import datetime, timedelta
@@ -5,69 +6,70 @@ import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
 from sklearn.tree import DecisionTreeRegressor
 import numpy as np
-import streamlit as st
 
-# Streamlit UI setup
+
 st.set_page_config(page_title="Stock Market Predictor", layout="wide", page_icon="📊")
 
-# Custom CSS for Business Theme
+# Custom CSS with Updated Colors
 st.markdown(
     """
     <style>
     .stApp {
-        background-color:rgb(74, 85, 97);
-        color:rgb(255, 255, 255);
+        background-color: #867969;
+        color: #E9E8E6;
         font-family: 'Arial', sans-serif;
     }
-   
-    
     .title {
         text-align: center;
         font-size: 3em;
-        color:rgb(255, 158, 158);
+        color: #E9E8E6;
         font-weight: bold;
         margin-bottom: 25px;
     }
     .live-stocks {
         text-align: center;
         font-size: 1.5em;
-        color:rgb(210, 191, 115);
+        color: #E9E8E6;
         font-weight: bold;
         margin-bottom: 20px;
     }
     .info-message {
-        color:rgb(234, 239, 245);
+        color: #E9E8E6;
         font-size: 1.2em;
         text-align: center;
         margin-top: 20px;
     }
     .sidebar .sidebar-content {
-        background:rgb(0, 0, 0) !important;
-        color: #ecf0f1;
+        background: #5E503F !important;
+        color: #E9E8E6;
     }
     .sidebar .stButton>button {
-        background-color: #0d6efd !important;
-        color: white !important;
+        background-color: #3C2F2F !important;
+        color: #E9E8E6 !important;
         border-radius: 10px;
         font-size: 1.1em;
         padding: 8px;
     }
     .sidebar .stButton>button:hover {
-        background-color: #0056b3 !important;
+        background-color: #2D1F1F !important;
     }
     .footer {
         text-align: center;
         padding: 15px;
         margin-top: 30px;
-        color: #ecf0f1;
+        color: #E9E8E6;
         font-size: 1em;
         font-weight: bold;
-        background-color:rgb(74, 85, 97);
+        background-color: #867969;
     }
     </style>
     """,
     unsafe_allow_html=True
 )
+
+# Title
+st.markdown("<div class='title'>📊 Stock Market Predictor</div>", unsafe_allow_html=True)
+
 
 # Title
 st.markdown("<div class='title'>📊 Stock Market Predictor</div>", unsafe_allow_html=True)
@@ -201,5 +203,3 @@ else:
 
 # Footer
 st.markdown("<div class='footer'>🚀 Created by Vishwa.<br>Data sourced from Yahoo Finance.<br>Predictions are for educational purposes only.</div>", unsafe_allow_html=True)
-
-st.markdown("</div>", unsafe_allow_html=True)
